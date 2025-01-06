@@ -1,5 +1,5 @@
 import com.cloudogu.gitopswrapper.GitOpsWrapper
 
-def createWrapper() {
-    return new GitOpsWrapper()  // Return a new instance of the wrapper class
+def create(script) {
+    return new GitOpsWrapper(script)  // Pass the script context for use in deploy()
 }
