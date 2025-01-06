@@ -1,11 +1,13 @@
 package com.cloudogu.gitopswrapper
 
+class GitOpsWrapper implements Serializable {
+    def script
 
-import com.cloudogu.gitops.gitopsbuildlib
+    GitOpsWrapper(script) {
+        this.script = script  // Pass the Jenkins script context
+    }
 
-class GitOpsWrapper {
     def deploy(Map gitopsConfig) {
-        def gitOpsLib = new gitopsbuildlib()  // Create a new instance of GitOpsBuildLib
-        gitOpsLib.deployViaGitops(gitopsConfig)  // Call the deployViaGitops function
+        script.deployViaGitops(gitopsConfig)  // Call the global step
     }
 }
