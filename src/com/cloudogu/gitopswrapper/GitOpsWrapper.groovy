@@ -8,6 +8,6 @@ class GitOpsWrapper implements Serializable {
     }
 
     def deploy(Map gitopsConfig) {
-        script.deployViaGitops(gitopsConfig)  // Call the global step
+        script.deployViaGitops(gitopsConfig)  // Call the global function `deployViaGitops`
     }
 }
