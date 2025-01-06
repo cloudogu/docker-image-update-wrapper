@@ -4,10 +4,11 @@ class GitOpsWrapper implements Serializable {
     def script
 
     GitOpsWrapper(script) {
-        this.script = script  // Pass the Jenkins script context
+        this.script = script
     }
 
     def deploy(Map gitopsConfig) {
-        script.deployViaGitops(gitopsConfig)  // Call the global function `deployViaGitops`
+        script.library('github.com/cloudogu/ces-build-lib@2.5.0')  // Reload ces-build-lib
+        script.deployViaGitops(gitopsConfig)  // Call global function with context
     }
 }
