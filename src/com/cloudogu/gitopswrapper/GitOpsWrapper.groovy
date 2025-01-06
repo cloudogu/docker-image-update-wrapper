@@ -1,11 +1,15 @@
 package com.cloudogu.gitopswrapper
 
-//import com.cloudogu.gitops.gitopsbuildlib.deployViaGitops
-import static com.cloudogu.gitops.gitopsbuildlib.deployViaGitops
-
 class GitOpsWrapper {
-    static void deploy(Map gitopsConfig) {
-        deployViaGitops(gitopsConfig)  // Aufruf der Originalfunktion
+    def script  // Holds the pipeline context (`this`)
+
+    // Constructor to inject the pipeline context
+    GitOpsWrapper(def script) {
+        this.script = script
+    }
+
+    // Deploy method using the script context
+    def deploy(Map gitopsConfig) {
+        script.deployViaGitops(gitopsConfig)  // Call the global method through the pipeline context
     }
 }
-
