@@ -1,5 +1,3 @@
-package com.cloudogu.gitops
-
 import com.cloudogu.gitops.gitopsbuildlib.*
 
 class GitOpsWrapper {
