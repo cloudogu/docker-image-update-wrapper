@@ -1,6 +1,6 @@
 package com.cloudogu.gitopswrapper
 
-import com.cloudogu.gitops.gitopsbuildlib.*
+import com.cloudogu.gitops.gitopsbuildlib.deployViaGitops
 
 class GitOpsWrapper {
     def deploy(Map gitopsConfig) {
