@@ -1,7 +1,5 @@
 package com.cloudogu.gitopswrapper
 
-import com.cloudogu.gitops.gitopsbuildlib.*
-
 class GitOpsWrapper implements Serializable {
     def script
 
